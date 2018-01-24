@@ -11,8 +11,10 @@
     books.push(new Book('9781118087886', 'Big Java Late Objects', 'Cay S Horstmann', 'Education', '2012-01-11', '587', 'Introduction to Java and computer programming'))
     books.push(new Book('9789144105567', 'Webbutveckling med PHP and MySQL', 'Montathar Faraon', 'Education', '2016-11-29', '313', 'Introduction to PHP and database handling'))
     books.push(new Book('9780201633610', 'Design Patterns', 'Erich Gamma', 'Education', '1995-01-03', '488', 'Design patterns for object-oriented systems'))
-    // console.log(books)
-    let bookList = JSON.stringify(books, null, 2)
-    console.log(bookList)
+    // console.log(books) // Assignment 1 Task 1 Subtask A
+    // let bookList = JSON.stringify(books, null, 2) // Assignment 1 Task 1 Subtask B
+    // console.log(bookList) // Assignment 1 Task 1 Subtask B
+    let bookList = JSON.stringify(books)
+    callback(bookList)
   }
 }())
