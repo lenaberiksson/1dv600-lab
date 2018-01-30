@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /* class Book {
   constructor (id, title, author, genre, publishDate, price, description) {
