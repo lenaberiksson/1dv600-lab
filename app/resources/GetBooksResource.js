@@ -3,6 +3,7 @@
 
   var LibraryDAO = require('../dao/LibraryDAO');
   var Book = require('../dao/book');
+  var bookListHelper = require('./bookListHelper');
   var fs = require('fs');
   var xml2js = require('xml2js');
 
@@ -22,9 +23,10 @@
           parser.parseString(text, function (err, result) {
             var xmlBooks = result['catalog']['book'];
            
-            for (var i=0; i<xmlBooks.length; i++) {
+            books = bookListHelper.getBookList(xmlBooks)
+            /*for (var i=0; i<xmlBooks.length; i++) {
               books.push(new Book(xmlBooks[i].$.id, xmlBooks[i].title[0], xmlBooks[i].author[0], xmlBooks[i].genre[0], xmlBooks[i].publish_date[0], xmlBooks[i].price[0], xmlBooks[i].description[0]));
-            }
+            }*/
             
             var bookList = JSON.stringify(books);
             callback(bookList);
