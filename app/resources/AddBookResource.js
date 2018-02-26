@@ -14,7 +14,11 @@
         LibraryDAO.readXMLFile(xmlfile, function (result) {
             var xmlBooks = result['catalog']['book'];
             
-            result.catalog.book.push(bookDataHelper.updateBookData(data, xmlBooks.length+1));
+            var id = bookDataHelper.getFreeId(xmlBooks.slice());
+            bookDataHelper.formatData(data); 
+            result.catalog.book.push(bookDataHelper.updateBookData(data, id));
+
+            // books = bookListHelper.getBookList(xmlBooks); 
             
             LibraryDAO.writeXMLFile(xmlfile, result, function () {
                 callback();
