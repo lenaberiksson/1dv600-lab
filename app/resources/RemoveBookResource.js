@@ -4,9 +4,7 @@
     var LibraryDAO = require('../dao/LibraryDAO');
     var Book = require('../dao/book');
     var bookListHelper = require('./bookListHelper');
-    var fs = require('fs');
-    var xml2js = require('xml2js');
-
+    
     module.exports = function (id, callback) {
         var books = [];
         var xmlfile = __dirname + "/../../books.xml";
@@ -23,8 +21,7 @@
             books = bookListHelper.getBookList(xmlBooks); 
             
             LibraryDAO.writeXMLFile(xmlfile, result, function () {
-                var bookList = JSON.stringify(books);
-                callback(bookList);
+                callback();
             })
         })
     }

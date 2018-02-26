@@ -4,9 +4,7 @@
   var LibraryDAO = require('../dao/LibraryDAO');
   var Book = require('../dao/book');
   var bookListHelper = require('./bookListHelper');
-  var fs = require('fs');
-  var xml2js = require('xml2js');
-
+  
   module.exports = function getBooks (callback, title) { // The title is optional and is only present when searching. (You need yo modify the books.js file first)
     var books = [];
     /* books.push(new Book('9781491927281', 'Programming Rust', 'Jim Blandy , Jason Orenddorff ', 'Education', '2017-12-21', '538', 'Rust programming language'));
