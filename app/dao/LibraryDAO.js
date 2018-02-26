@@ -12,13 +12,36 @@
     var LibraryDAO = {
 
         // Get the entire file from the file system.
-        readXMLFile: function(callback) {
+        //readXMLFile: function(callback) {
+        readXMLFile: function(xmlfile, callback) {
 
+            var parser = new xml2js.Parser();
+
+            fs.readFile(xmlfile, "utf-8", function (error, text) {
+                if (error) {
+                    throw error;
+                } else {
+                    parser.parseString(text, function (err, result) {
+                        callback(result);
+                    })
+                }
+            })
         },
 
         // Write the entire file from the file system.
-        writeXMLFile: function(data) {
-
+        //writeXMLFile: function(data) {
+        writeXMLFile: function(xmlfile, data, callback) {
+            
+            var builder = new xml2js.Builder();
+            var xml = builder.buildObject(data);
+        
+            fs.writeFile(xmlfile, xml, function(error, data){
+                if (error) {
+                    throw error;
+                } else {
+                    callback();
+                }
+            })
         }
     };
 
