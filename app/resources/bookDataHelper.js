@@ -35,6 +35,9 @@
             if (!data.publish_date) {
                 data.publish_date = ' '
             }
+            if (Array.isArray(data.title)) {
+                data.title = data.title[0];
+            }
             if (Array.isArray(data.author)) {
                 data.author = data.author[0];
             }
@@ -50,7 +53,25 @@
             if (Array.isArray(data.description)) {
                 data.description = data.description[0];
             }
-            
+        },
+
+        validateTitle: function (data, books) {
+            var valid = false;
+            if (data.title) {
+                for (var i=0; i<data.title.length; i++) {
+                    if (data.title[i] != ' ') {
+                        valid = true;
+                    }
+                }
+                if (valid) {
+                    for (var i=0; i<books.length; i++) {
+                        if (books[i].title == data.title) {
+                            valid = false;
+                        }
+                    }
+                }
+            } 
+            return valid;  
         }
 
     }

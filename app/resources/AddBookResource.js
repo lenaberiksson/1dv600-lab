@@ -4,7 +4,6 @@
     var LibraryDAO = require('../dao/LibraryDAO');
     var Book = require('../dao/book');
     var bookDataHelper = require('./bookDataHelper');
-    // var bookListHelper = require('./bookListHelper');
 
 
     module.exports = function (data, callback) {
@@ -14,15 +13,21 @@
         LibraryDAO.readXMLFile(xmlfile, function (result) {
             var xmlBooks = result['catalog']['book'];
             
-            var id = bookDataHelper.getFreeId(xmlBooks.slice());
+            var existingBooks = xmlBooks.slice();
             bookDataHelper.formatData(data); 
-            result.catalog.book.push(bookDataHelper.updateBookData(data, id));
-
-            // books = bookListHelper.getBookList(xmlBooks); 
+            var titleValid = bookDataHelper.validateTitle(data, existingBooks);
             
-            LibraryDAO.writeXMLFile(xmlfile, result, function () {
+            if (titleValid) {
+                var id = bookDataHelper.getFreeId(existingBooks);
+    
+                result.catalog.book.push(bookDataHelper.updateBookData(data, id));
+                
+                LibraryDAO.writeXMLFile(xmlfile, result, function () {
+                    callback();
+                })
+            } else {
                 callback();
-            })
+            }
         })
 
     };
