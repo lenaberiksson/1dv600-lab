@@ -96,18 +96,10 @@
     <price>987</price>
     <description> kjh</description>
   </book>
-  <book id="16">
-    <title> mnbmnb</title>
-    <author> mnbmnb</author>
-    <genre> mnbmnb</genre>
-    <publish_date>mnbmnb</publish_date>
-    <price> mnbmnb</price>
-    <description> mnbmnb</description>
-  </book>
   <book id="17">
     <title> lkj</title>
     <author> </author>
-    <genre> </genre>
+    <genre> hej</genre>
     <publish_date> </publish_date>
     <price> </price>
     <description> </description>
@@ -118,6 +110,14 @@
     <genre> </genre>
     <publish_date> </publish_date>
     <price> lkj</price>
+    <description> </description>
+  </book>
+  <book id="19">
+    <title> kjlkj</title>
+    <author> </author>
+    <genre> </genre>
+    <publish_date> </publish_date>
+    <price> </price>
     <description> </description>
   </book>
 </catalog>
