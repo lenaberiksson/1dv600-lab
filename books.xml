@@ -80,44 +80,4 @@
     <publish_date>1988-09-01</publish_date>
     <description>Hawking attempts to explain a range of subjects in cosmology, including the big bang, black holes and light cones, to the nonspecialist reader. His main goal is to give an overview of the subject, but he also attempts to explain some complex mathematics. In the 1996 edition of the book and subsequent editions, Hawking discusses the possibility of time travel and wormholes and explores the possibility of having a universe without a quantum singularity at the beginning of time.</description>
   </book>
-  <book id="11">
-    <title> ab</title>
-    <author> a</author>
-    <genre> a</genre>
-    <publish_date>a</publish_date>
-    <price> a</price>
-    <description> a</description>
-  </book>
-  <book id="14">
-    <title> k</title>
-    <author> kjh</author>
-    <genre> kjh</genre>
-    <publish_date> iuy</publish_date>
-    <price>987</price>
-    <description> kjh</description>
-  </book>
-  <book id="17">
-    <title> lkj</title>
-    <author> </author>
-    <genre> hej</genre>
-    <publish_date> </publish_date>
-    <price> </price>
-    <description> </description>
-  </book>
-  <book id="18">
-    <title> ölk</title>
-    <author> lkj2</author>
-    <genre> </genre>
-    <publish_date> </publish_date>
-    <price> lkj</price>
-    <description> </description>
-  </book>
-  <book id="19">
-    <title> kjlkj</title>
-    <author> </author>
-    <genre> </genre>
-    <publish_date> </publish_date>
-    <price> </price>
-    <description> </description>
-  </book>
 </catalog>

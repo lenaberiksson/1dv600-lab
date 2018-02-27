@@ -7,7 +7,7 @@
 
     module.exports = function (id, data, callback) {
 
-        var books = [];
+        // var books = [];
         var xmlfile = __dirname + "/../../books.xml";
 
         LibraryDAO.readXMLFile(xmlfile, function (result) {
