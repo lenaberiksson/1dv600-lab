@@ -1,47 +1,47 @@
 var expect    = require("chai").expect;
 var bookListHelper = require("../app/resources/bookListHelper");
-var AddSimpleFunction = require("../app/AddSimpleFunction");
 
-describe("bookListHelper tests", function () {
+describe("getBookList tests", function () {
 
     describe("The test checks that books are put in the book list correctly", function () {
 
         var inputArray = [];
-            var books = [];
-
-            var identity1 = {
-                'id': '1'
-            }
-            var identity2 = {
-                'id': '2'
-            }
+        var books = [];
             
-            var bookObject1 = {
-                '$': identity1,
-                'title': ['Programming Rust'],
-                'author': ['Jim Blandy , Jason Orenddorff'],
-                'genre': ['Education'],
-                'publish_date': ['2017-12-21'],
-                'price': ['538'],
-                'description': ['Rust programming language']
-            }
+        var identity1 = {
+            'id': '1'
+        }
+        var identity2 = {
+            'id': '2'
+        }
+        
+        var bookObject1 = {
+            '$': identity1,
+            'title': ['Programming Rust'],
+            'author': ['Jim Blandy , Jason Orenddorff'],
+            'genre': ['Education'],
+            'publish_date': ['2017-12-21'],
+            'price': ['538'],
+            'description': ['Rust programming language']
+        }
 
-            var bookObject2 = {
-                '$': identity2,
-                'title': ['Deep learning with Python'],
-                'author': ['Francois Chollet'],
-                'genre': ['Education'],
-                'publish_date': ['2018-01-10'],
-                'price': ['450'],
-                'description': ['Deep learning using Python programming language']
-            }
+        var bookObject2 = {
+            '$': identity2,
+            'title': ['Deep learning with Python'],
+            'author': ['Francois Chollet'],
+            'genre': ['Education'],
+            'publish_date': ['2018-01-10'],
+            'price': ['450'],
+            'description': ['Deep learning using Python programming language']
+        }
 
-            inputArray.push(bookObject1);
-            inputArray.push(bookObject2);
+        inputArray.push(bookObject1);
+        inputArray.push(bookObject2);
 
-            books = bookListHelper.getBookList(inputArray);
+        // calling the tested method
+        books = bookListHelper.getBookList(inputArray);
 
-
+        // checks
         it("add correct number of books in the book list", function () {
             var arrayLength = books.length;
             expect(arrayLength).to.equal(2);

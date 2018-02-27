@@ -15,9 +15,9 @@
             
             var existingBooks = xmlBooks.slice();
             bookDataHelper.formatData(data); 
-            var titleValid = bookDataHelper.validateTitle(data, existingBooks);
+            var dataValid = bookDataHelper.validateData(data, existingBooks);
             
-            if (titleValid) {
+            if (dataValid) {
                 var id = bookDataHelper.getFreeId(existingBooks);
     
                 result.catalog.book.push(bookDataHelper.updateBookData(data, id));

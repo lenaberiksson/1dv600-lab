@@ -55,6 +55,15 @@
             }
         },
 
+        validateData: function (data, books) {
+            var valid = false;
+            valid = this.validateTitle(data, books);
+            if (valid) {
+                valid = this.validatePrice(data);
+            }
+            return valid;  
+        },
+
         validateTitle: function (data, books) {
             var valid = false;
             if (data.title) {
@@ -71,6 +80,11 @@
                     }
                 }
             } 
+            return valid;  
+        },
+
+        validatePrice: function (data) {
+            var valid = true; 
             return valid;  
         }
 
