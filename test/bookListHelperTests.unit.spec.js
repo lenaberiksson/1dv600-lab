@@ -89,4 +89,21 @@ describe("getBookList tests", function () {
             expect(secondDescription).to.equal('Deep learning using Python programming language');
         });
     });
+
+    describe("The test checks that empty arrays are handled correctly", function () {
+
+        var inputArray = [];
+        var books = [];
+            
+        // calling the tested method
+        books = bookListHelper.getBookList(inputArray);
+
+        // checks
+        it("add no books in the book list", function () {
+            var arrayLength = books.length;
+            expect(arrayLength).to.equal(0);
+        });
+
+    });
+
 });

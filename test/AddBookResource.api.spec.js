@@ -13,7 +13,6 @@ describe("AddBook Resource", function () {
 
             request(app)
                 .put('/api/books')
-                //.send({'$':{'id': 11}, 
                 .send({ 
                 'title': ['Programming Rust'],
                 'author': ['Jim Blandy , Jason Orenddorff'],

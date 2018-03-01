@@ -3,7 +3,6 @@
 
     var LibraryDAO = require('../dao/LibraryDAO');
     var bookDataHelper = require('./bookDataHelper');
-    // var bookListHelper = require('./bookListHelper');
 
     module.exports = function (id, data, callback) {
 
@@ -18,8 +17,6 @@
                     result.catalog.book[i] = bookDataHelper.updateBookData(data)
                 }
             }
-
-            // books = bookListHelper.getBookList(xmlBooks); 
             
             LibraryDAO.writeXMLFile(xmlfile, result, function () {
                 callback();

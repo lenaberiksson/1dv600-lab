@@ -19,11 +19,6 @@
             }
 
             callback(bookData);
-            //books = bookListHelper.getBookList(xmlBooks); 
-            
-            /*LibraryDAO.writeXMLFile(xmlfile, result, function () {
-                callback();
-            })*/
         })
     };
 
