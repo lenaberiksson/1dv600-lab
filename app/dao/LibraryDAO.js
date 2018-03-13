@@ -1,3 +1,9 @@
+/**
+ * Module for the Library storage helper.
+ *
+ * @author Lena Eriksson
+ * @version 1.1.0
+ */
 (function () {
     "use strict";
 

@@ -1,3 +1,9 @@
+/**
+ * Module for the Book object.
+ *
+ * @author Lena Eriksson
+ * @version 1.1.0
+ */
 "use strict";
 
 function Book (id, title, author, genre, publishDate, price, description) {

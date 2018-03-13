@@ -1,3 +1,9 @@
+/**
+ * Module for showing book list.
+ *
+ * @author Lena Eriksson
+ * @version 1.1.0
+ */
 (function () {
   "use strict";
 
@@ -8,8 +14,10 @@
     var books = [];
     var xmlfile = __dirname + "/../../books.xml";
     
+    // Get books from xml file
     LibraryDAO.readXMLFile(xmlfile, function (result) {
       var xmlBooks = result['catalog']['book'];
+      // Create book list
       books = bookListHelper.getBookList(xmlBooks); 
       var bookList = JSON.stringify(books);
       callback(bookList);
