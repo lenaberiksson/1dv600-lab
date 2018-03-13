@@ -97,6 +97,11 @@
         // Validates book price
         validatePrice: function (data) {
             var valid = true; 
+            if (data.price) {
+                if (isNaN(data.price)) {
+                    valid = false;
+                }
+            }
             return valid;  
         }
 
