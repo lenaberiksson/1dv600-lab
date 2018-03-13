@@ -1,9 +1,14 @@
+/**
+ * Module for book data helper.
+ *
+ * @author Lena Eriksson
+ * @version 1.1.0
+ */
 (function () {
     "use strict";
 
-    var Book = require('../dao/book');
-
     var bookDataHelper = {
+        // Updates book data
         updateBookData: function (data, id) {
             var identity = {
                 'id': data.id || id
@@ -20,6 +25,7 @@
            return updatedData;
         },
         
+        // Gets next free book id
         getFreeId: function (books) {
             var highestId = 1;
             for (var i=0; i<books.length; i++) {
@@ -31,6 +37,7 @@
             return highestId.toString();
         },
 
+        // Formats book data
         formatData: function (data) {
             if (!data.publish_date) {
                 data.publish_date = ' '
@@ -55,6 +62,7 @@
             }
         },
 
+        // Validates book data
         validateData: function (data, books) {
             var valid = false;
             valid = this.validateTitle(data, books);
@@ -64,17 +72,20 @@
             return valid;  
         },
 
+        // Validates book title
         validateTitle: function (data, books) {
             var valid = false;
             if (data.title) {
                 for (var i=0; i<data.title.length; i++) {
                     if (data.title[i] != ' ') {
+                        // Book title is not empty
                         valid = true;
                     }
                 }
                 if (valid) {
                     for (var i=0; i<books.length; i++) {
                         if (books[i].title == data.title) {
+                            // Book title already exists
                             valid = false;
                         }
                     }
@@ -83,6 +94,7 @@
             return valid;  
         },
 
+        // Validates book price
         validatePrice: function (data) {
             var valid = true; 
             return valid;  

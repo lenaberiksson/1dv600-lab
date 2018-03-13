@@ -1,9 +1,16 @@
+/**
+ * Module for book list helper.
+ *
+ * @author Lena Eriksson
+ * @version 1.1.0
+ */
 (function () {
     "use strict";
 
     var Book = require('../dao/book');
 
     var bookListHelper = {
+        // Creates a book list
         getBookList: function (bookArray) {
             var books = [];
             for (var i=0; i<bookArray.length; i++) {
