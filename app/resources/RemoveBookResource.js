@@ -2,7 +2,6 @@
     "use strict";
 
     var LibraryDAO = require('../dao/LibraryDAO');
-    var Book = require('../dao/book');
     var bookListHelper = require('./bookListHelper');
     
     module.exports = function (id, callback) {

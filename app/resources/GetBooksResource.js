@@ -2,7 +2,6 @@
   "use strict";
 
   var LibraryDAO = require('../dao/LibraryDAO');
-  var Book = require('../dao/book');
   var bookListHelper = require('./bookListHelper');
   
   module.exports = function getBooks (callback, title) { // The title is optional and is only present when searching. (You need yo modify the books.js file first)

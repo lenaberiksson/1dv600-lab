@@ -2,7 +2,6 @@
     "use strict";
 
     var LibraryDAO = require('../dao/LibraryDAO');
-    var Book = require('../dao/book');
     var bookDataHelper = require('./bookDataHelper');
 
 
