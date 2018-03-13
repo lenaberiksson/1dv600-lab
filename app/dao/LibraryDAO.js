@@ -12,7 +12,6 @@
     var LibraryDAO = {
 
         // Get the entire file from the file system.
-        //readXMLFile: function(callback) {
         readXMLFile: function(xmlfile, callback) {
 
             var parser = new xml2js.Parser();
@@ -29,7 +28,6 @@
         },
 
         // Write the entire file from the file system.
-        //writeXMLFile: function(data) {
         writeXMLFile: function(xmlfile, data, callback) {
             
             var builder = new xml2js.Builder();
